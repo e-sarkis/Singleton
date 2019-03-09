@@ -2,6 +2,7 @@
 
 int main()
 {
+	// Logger objects
 	Logger standard(std::cout);
 	Logger error(std::cerr);
 
@@ -9,7 +10,7 @@ int main()
 	ProgramManager::instance().setLogger(standard);
 
 	ProgramManager::instance().getLogger().log("Hello Standard Output!");
-
+	// Swap to error logging
 	ProgramManager::instance().setLogger(error);
 	ProgramManager::instance().getLogger().log("Hello Error Output!");
 
