@@ -15,10 +15,10 @@ public:
 		return *instance;
 	}
 
-	// Setters
+	// Setter
 	void setLogger(Logger & t_logger) { _currentLogger = &t_logger; }
 
-	// Getters
+	// Getter
 	Logger & getLogger() { return *_currentLogger; }
 
 private:

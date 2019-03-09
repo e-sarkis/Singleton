@@ -8,10 +8,10 @@ int main()
 	// Lazy-initialization in the ProgramManager::instance() call
 	ProgramManager::instance().setLogger(standard);
 
-	ProgramManager::instance().getLogger().log("Hello Standard Output\n");
+	ProgramManager::instance().getLogger().log("Hello Standard Output!");
 
 	ProgramManager::instance().setLogger(error);
-	ProgramManager::instance().getLogger().log("Hello Error Output\n");
+	ProgramManager::instance().getLogger().log("Hello Error Output!");
 
 	return 0;
 }

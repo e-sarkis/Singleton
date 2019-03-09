@@ -2,13 +2,19 @@
 
 #include <iostream>
 
+// Output stream object agnostic logging system.
 class Logger
 {
 public:
-	Logger(std::ostream &);
-	~Logger() {};
+	// Constructs a Logger associated with given ouput stream for log calls.
+	Logger(std::ostream &t_stream) : _stream(t_stream)
+	{ }
 
-	void log(std::string);
+	// Write given string to output stream associated with this Logger object.
+	void log(std::string t_in)
+	{
+		_stream << __DATE__ << " " << __TIME__ << "\t" << t_in.c_str() << std::endl;
+	}
 
 private:
 	std::ostream & _stream;
