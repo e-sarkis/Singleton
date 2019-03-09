@@ -1,8 +1,9 @@
 #pragma once
+
+#include "Logger.h"
+
 // Singleton implementation that reduces overall codebase singleton
 // implementations.
-// For simplicity I have used primitives as the private members instead of
-// objects.
 class ProgramManager
 {
 public:
@@ -15,19 +16,12 @@ public:
 	}
 
 	// Setters
-	void setCharacter(char t_character) { _character = new char(t_character); }
-	void setInteger(char t_integer) { _integer = new int(t_integer); }
+	void setLogger(Logger & t_logger) { _currentLogger = &t_logger; }
 
 	// Getters
-	char & getCharacter() { return *_character; }
-	int & getInteger() { return *_integer; }
+	Logger & getLogger() { return *_currentLogger; }
 
 private:
-	// Were the member variables classes requiring global access (instead of
-	// primitives) they would otherwise potentially be separate singleton 
-	// implementations.
-	char *_character;
-	int *_integer;
-
+	Logger * _currentLogger;
 };
 
